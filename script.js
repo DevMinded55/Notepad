@@ -26,14 +26,6 @@ function renderTrashNotes(){
     }
 }
 
-function getNoteTemplate(i){
-    return `<p>+ Titel: ${notesTitle[i]} -> ${notes[i]} <button onclick="noteToTrash(${i})">x</button></p> `;
-}
-
-function getTrashNoteTemplate(iTrashNotes){
-    return `<p>+ Titel: ${trashNotesTitle[iTrashNotes]} -> ${trashNotes[iTrashNotes]} <button onclick="deleteNote(${iTrashNotes})">x</button></p> `;
-}
-
 function addNote(){
 let noteInputRef = document.getElementById("note_input");
 let noteInput = noteInputRef.value;
@@ -90,4 +82,13 @@ function deleteNote(i){
     saveToLocalTrashStorage();
     renderNotes();
     renderTrashNotes();
+}
+
+function redoDelete(i){
+    let redoNote = trashNotes.splice(i, 1);
+    notes.push(redoNote[0]);
+    console.log(notes);
+    saveToLocalStorage();
+    saveToLocalTrashStorage();
+    renderNotes();
 }
