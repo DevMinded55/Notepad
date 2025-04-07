@@ -84,7 +84,7 @@ function deleteNote(i){
     renderTrashNotes();
 }
 
-function redoDelete(i){
+function redoTrash(i){
     let redoNote = trashNotes.splice(i, 1);
     notes.push(redoNote[0]);
     console.log(notes);

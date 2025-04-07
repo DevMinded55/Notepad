@@ -3,5 +3,5 @@ function getNoteTemplate(i){
 }
 
 function getTrashNoteTemplate(iTrashNotes){
-    return `<p>+ Titel: ${trashNotesTitle[iTrashNotes]} -> ${trashNotes[iTrashNotes]} <button onclick="redoDelete(${iTrashNotes})">n</button></p> <button onclick="deleteNote(${iTrashNotes})">x</button></p> `;
+    return `<p>+ Titel: ${trashNotesTitle[iTrashNotes]} -> ${trashNotes[iTrashNotes]} <button onclick="redoTrash(${iTrashNotes})">n</button></p> <button onclick="deleteNote(${iTrashNotes})">x</button></p> `;
 }
